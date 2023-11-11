@@ -1,0 +1,53 @@
+# don't ignore keep files
+!.keep
+
+# jfrog
+.jfrog
+
+# OS X files
+.DS_Store
+
+# logs
+*.log
+
+# Maven
+target/
+*.class
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+# STS IDE
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans IDE
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# IntelliJ IDE
+.idea
+*.iws
+*.iml
+*.ipr
+*.ids
+*.orig
+.idea_modules
+.idea/
+build/
+*/build/
+out/
+classes/
+
+# VS code IDE
+.vscode
+.history
