@@ -1,7 +1,7 @@
 package com.hypham.learn.customer.exception;
 
-import com.hypham.learn.clients.FraudCheckResponse;
-import com.hypham.learn.clients.ResponseStatusEnum;
+import com.hypham.learn.clients.dto.DefaultResponse;
+import com.hypham.learn.clients.dto.ResponseStatusEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class ErrorHandler {
     @ExceptionHandler(Exception.class) // enhance more in future
-    public ResponseEntity<FraudCheckResponse> fraudException(Exception ex) {
+    public ResponseEntity<DefaultResponse> fraudException(Exception ex) {
         ExceptionResponse exceptionResponse = ExceptionResponse.builder().message(ex.getMessage()).timestamp(LocalDateTime.now()).build();
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new FraudCheckResponse<>(ResponseStatusEnum.FAIL, exceptionResponse));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new DefaultResponse<>(ResponseStatusEnum.FAIL, exceptionResponse));
     }
 }

@@ -1,4 +1,4 @@
-package com.hypham.learn.clients;
+package com.hypham.learn.clients.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class FraudCheckResponse<T> {
+public class DefaultResponse<T> {
     private ResponseStatusEnum statusCode;
     private T body;
 }

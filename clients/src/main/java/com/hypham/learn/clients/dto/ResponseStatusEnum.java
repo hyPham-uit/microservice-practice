@@ -1,4 +1,4 @@
-package com.hypham.learn.clients;
+package com.hypham.learn.clients.dto;
 
 import lombok.Getter;
 

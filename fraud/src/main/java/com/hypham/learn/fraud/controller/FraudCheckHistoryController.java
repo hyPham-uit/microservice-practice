@@ -4,8 +4,8 @@ import com.hypham.learn.fraud.model.FraudCheckHistory;
 import com.hypham.learn.fraud.service.FraudCheckService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.hypham.learn.clients.ResponseStatusEnum;
-import com.hypham.learn.clients.FraudCheckResponse;
+import com.hypham.learn.clients.dto.ResponseStatusEnum;
+import com.hypham.learn.clients.dto.DefaultResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,11 +23,11 @@ public class FraudCheckHistoryController {
   }
 
   @GetMapping(path = "{customerEmail}")
-  public ResponseEntity<FraudCheckResponse<Boolean>> isFraudster(
+  public ResponseEntity<DefaultResponse<Boolean>> isFraudster(
       @PathVariable("customerEmail") String customerEmail) {
     log.info("Check fraudster");
     return ResponseEntity.ok(
-        new FraudCheckResponse<>(
+        new DefaultResponse<>(
             ResponseStatusEnum.SUCCESS, fraudCheckService.checkFraudster(customerEmail)));
   }
 }
