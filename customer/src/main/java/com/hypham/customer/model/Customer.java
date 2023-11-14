@@ -1,4 +1,4 @@
-package com.hypham.learn.model;
+package com.hypham.customer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

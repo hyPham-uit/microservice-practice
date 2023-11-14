@@ -1,12 +1,19 @@
 server:
-  port: 8080
+  port: 8081
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 spring:
   application:
-    name: customer
+    name: fraud
   datasource:
     username: 'postgres'
-    url: jdbc:postgresql://localhost:5432/customer
+    url: jdbc:postgresql://localhost:5432/fraud
     password: 'postgres'
   jpa:
     properties:
@@ -16,15 +23,3 @@ spring:
     hibernate:
       ddl-auto: create-drop # just use for test to clean data when restart. Default use update
     show-sql: 'true'
-
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
-services:
-  fraud:
-    v1:
-      endpoint: 'http://FRAUD/api/v1/fraud-check/'

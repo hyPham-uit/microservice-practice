@@ -1,6 +1,6 @@
-package com.hypham.learn.repository;
+package com.hypham.customer.repository;
 
-import com.hypham.learn.model.Customer;
+import com.hypham.customer.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {}
