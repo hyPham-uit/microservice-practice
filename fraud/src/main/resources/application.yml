@@ -23,3 +23,5 @@ spring:
     hibernate:
       ddl-auto: create-drop # just use for test to clean data when restart. Default use update
     show-sql: 'true'
+  zipkin:
+    base-url: http://localhost:9411

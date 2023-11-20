@@ -49,7 +49,6 @@ public class CustomerService {
       throw new IllegalStateException("fraudster!");
     }
     customerRepository.saveAndFlush(customer);
-    fraudClients.isFraudster(customer.getEmail());
     ResponseEntity<DefaultResponse<Boolean>> isSendNoti = notificationClients.userRegister(
         CustomerRegisterNotiRequest.builder()
             .userId(customer.getId())

@@ -20,6 +20,7 @@ public class NotificationController {
   @PostMapping(path = "customer/register")
   public ResponseEntity<DefaultResponse<Boolean>> userRegister(
       @RequestBody CustomerRegisterNotiRequest customerRegisterNotiRequest) {
+    log.info("Send noti controller");
     notificationService.registerUser(customerRegisterNotiRequest);
     return ResponseEntity.ok(new DefaultResponse<>(ResponseStatusEnum.SUCCESS, true));
   }
